@@ -23,32 +23,34 @@ class Result {
     public static void insertionSort1(int n, List<Integer> arr) {
     // Write your code here
     int temp=arr.get(n-1);
-    
-     for(int i=n-1; i>0; i--){
-         if(temp < arr.get(i-1)){
+     for(int i=n-1; i>=0; i--){
+         if((i!=0) && (temp < arr.get(i-1))){
              arr.set(i, arr.get(i-1));
-             printArray(n, arr);
-            
+             
+            printArray(n, arr);
              }
-            else
-            {
+            else if(i==0){
                 arr.set(i, temp);
-               printArray(n, arr);
+                printArray(n, arr);
                 break;
             } 
+            else {
+                arr.set(i, temp);
+                 printArray(n, arr);
+                 break;
+            } 
          }
-         
      }
-    
-     public static void printArray(int n, List<Integer> arr){
-    for(int i=0; i<n; i++){
-        System.out.print(arr.get(i)+" ");      
-    }
-    System.out.println();
-   }
+     
+    public static void printArray(int n, List<Integer> arr){
+        for(int i=0; i<n; i++){
+            System.out.print(arr.get(i)+" ");
+        } 
+        System.out.println();
+     }
     }
 
-  
+
 
 public class Solution {
     public static void main(String[] args) throws IOException {
