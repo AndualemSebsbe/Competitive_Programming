@@ -1,4 +1,3 @@
-
 class Solution
 {
 	int  select(int arr[], int i)
