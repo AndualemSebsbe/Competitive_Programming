@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Comparator;
 
-class Solution {
+class KClosest{
     public int[][] kClosest(int[][] points, int k) {
         int len=points.length;
         double[][] d=new double[len][2];
