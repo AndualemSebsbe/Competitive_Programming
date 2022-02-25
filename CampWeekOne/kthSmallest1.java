@@ -1,6 +1,6 @@
 import java.util.PriorityQueue;
 
-class kthSmallest {
+class kthSmallest1 {
     public int kthSmallest(int[][] matrix, int k) {
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b) -> (b - a));
         for(int i=0; i<matrix.length; i++){
