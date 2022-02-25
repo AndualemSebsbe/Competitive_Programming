@@ -1,7 +1,7 @@
 /* The isBadVersion API is defined in the parent class VersionControl.
       boolean isBadVersion(int version); */
 
-      public class firstBadVersion extends VersionControl {
+      public class firstBadVersion1 extends VersionControl {
         public int firstBadVersion(int n) {
             int l = 0, r = n;
             while(l <= r){
