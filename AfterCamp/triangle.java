@@ -1,6 +1,7 @@
+import java.util.List;
+
 class triangle {
     public int minimumTotal(List<List<Integer>> triangle) {
-        int n = triangle.size();
         // Bottom-Up DP Approach
         for(int i = triangle.size() - 2; i >= 0; i--){
             for(int j = 0; j < triangle.get(i).size(); j++){
