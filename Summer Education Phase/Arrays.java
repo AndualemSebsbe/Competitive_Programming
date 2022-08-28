@@ -6,4 +6,7 @@ public class Arrays {
         return null;
     }
 
+    public static void sort(int[] people) {
+    }
+
 }
