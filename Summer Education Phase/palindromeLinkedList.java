@@ -7,7 +7,7 @@
       ListNode(int val) { this.val = val; }
       ListNode(int val, ListNode next) { this.val = val; this.next = next; }
   }
-class Solution {
+class palindromeLinkedList {
     ListNode node;
     public boolean isPalindrome(ListNode head) {
         if(node == null) node = head;
