@@ -3,7 +3,8 @@ import java.util.Stack;
 class largestRectangle {
     public int largestRectangleArea(int[] heights) {
         int len = heights.length;
-        int num = 0, maxValue = 0, pro = 0, val = 0;
+        int maxValue = 0;
+        // int num = 0, maxValue = 0, pro = 0, val = 0;
         
         if(len==1) return heights[0];
         Stack<Integer> st = new Stack<>();

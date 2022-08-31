@@ -4,7 +4,7 @@ class removeKDigit {
     public String removeKdigits(String num, int k) {
         int len = num.length();
         if(len == k) return "0";
-        Stack<Character> st = new Stack();
+        Stack<Character> st = new Stack<Character>();
         StringBuilder sb = new StringBuilder();
        int count = 0;
      while(count< len){

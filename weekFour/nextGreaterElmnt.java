@@ -6,8 +6,8 @@ class nextGreaterElmnt {
         HashMap<Integer, Integer> map = new HashMap<>();
       
         Stack<Integer> st = new Stack<>();
-        int res[] = new int[nums1.length];
-        int count = 1;
+        // int res[] = new int[nums1.length];
+        // int count = 1;
         st.push(nums2[0]);
         for(int num: nums2){
             while((!st.empty()) && (st.peek() < num))
