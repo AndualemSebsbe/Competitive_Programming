@@ -19,9 +19,6 @@ class Node {
         children = _children;
     }
 };
-
-
-class Solution {
     
     public List<Integer> preorder(Node root) {
         List<Integer> res = new ArrayList();
