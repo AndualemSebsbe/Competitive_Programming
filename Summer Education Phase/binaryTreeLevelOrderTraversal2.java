@@ -3,24 +3,22 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class binaryTreeLevelOrderTraversal {
-
-//   Definition for a binary tree node.
-  public class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode() {}
-      TreeNode(int val) { this.val = val; }
+public class binaryTreeLevelOrderTraversal2 {
+//  Definition for a binary tree node.
+ public class TreeNode {
+     int val;
+     TreeNode left;
+     TreeNode right;
+     TreeNode() {}
+     TreeNode(int val) { this.val = val; }
       TreeNode(int val, TreeNode left, TreeNode right) {
           this.val = val;
           this.left = left;
-          this.right = right;
+         this.right = right;
       }
   }
-
-
-    public List<List<Integer>> levelOrder(TreeNode root) {
+ 
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
         if(root == null) return new ArrayList();
         
         List<List<Integer>> res = new ArrayList();
@@ -42,6 +40,13 @@ public class binaryTreeLevelOrderTraversal {
                 level.add(cur.val);
             }
             res.add(level);
+        }
+        
+        int l = 0, r = res.size()-1;
+        while(l < r){
+            List<Integer> temp = res.get(l);
+            res.set(l++, res.get(r));
+            res.set(r--, temp);
         }
         
         return res;
