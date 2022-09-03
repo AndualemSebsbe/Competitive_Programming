@@ -1,4 +1,4 @@
-class Solution {
+class stringWithout3a3b {
     public String strWithout3a3b(int a, int b) {
         String str = "";
         
