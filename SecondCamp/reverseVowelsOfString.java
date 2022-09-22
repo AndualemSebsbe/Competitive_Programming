@@ -1,7 +1,3 @@
-import java.nio.file.attribute.PosixFileAttributeView;
-
-import javax.sound.sampled.SourceDataLine;
-
 class reverseVowelOfString {
     public String reverseVowels(String s) {
     
