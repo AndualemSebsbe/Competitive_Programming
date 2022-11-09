@@ -1,19 +1,19 @@
 class Solution {
     public int[] findErrorNums(int[] nums) {
-        int[] ans = new int[2];
-        Set<Integer> set = new HashSet();
+        int dup = -1, missing = -1;
         
         for(int num : nums){
-            if(set.contains(num))
-                ans[0] = num;
-            set.add(num);
+            if(nums[Math.abs(num) - 1] < 0)
+                dup = Math.abs(num);
+            else
+                nums[Math.abs(num) - 1] *= -1;
         }
         
-        for(int i = 1; i <= nums.length; i++){
-            if(!set.contains(i))
-                ans[1] = i;
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i] > 0)
+               missing = i + 1;
         }
         
-        return ans;
+        return new int[]{dup, missing};
     }
 }
