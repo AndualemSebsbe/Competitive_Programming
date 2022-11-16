@@ -1,21 +1,15 @@
 class Solution {
     public int numSquares(int n) {
-       Integer[] memo = new Integer[n+1];
-       return solve(n, memo);
-    }
-    
-    public int solve(int n, Integer[] memo){
-        if(n <= 3)
-            return n;
+        int[] dp = new int[n+1];
+        dp[0] = 0;
         
-        if(memo[n] != null)
-            return memo[n];
+        for(int i = 1; i <= n; i++){
+            dp[i] = i;
+            
+            for(int j = 1; j*j <= i; j++)
+                dp[i] = Math.min(dp[i], 1 + dp[i-j*j]);
+        }
         
-        int min = n;
-        for(int i = 1; i*i <= n; i++)
-            min = Math.min(min, 1 + solve(n-i*i, memo));
-        
-        memo[n] = min;
-        return memo[n];
+        return dp[n];
     }
 }
