@@ -5,9 +5,12 @@ class Solution {
         
         String roman = "";
         for(int pos = 0; pos < value.length; pos++){
-            while(num >= value[pos]){
-                roman += notations[pos];
-                num -= value[pos];
+            if(num >= value[pos]){
+                int val = num / value[pos];
+                num %= value[pos];
+                
+                for(int i = 0; i < val; i++)
+                    roman += notations[pos];
             }
         }
         
