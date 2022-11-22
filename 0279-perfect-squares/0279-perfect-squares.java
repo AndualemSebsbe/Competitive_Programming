@@ -1,21 +1,21 @@
-//Legendere's 3-Square Theorem
 class Solution {
     public int numSquares(int n) {
-        double sqrt = Math.sqrt(n);
-        if(Math.ceil(sqrt) == Math.floor(sqrt))
-            return 1;
+       Integer[] memo = new Integer[n+1];
+       return solve(n, memo);
+    }
+    
+    public int solve(int n, Integer[] memo){
+        if(n <= 3)
+            return n;
         
-        while(n % 4 == 0)
-            n /= 4;
-        if(n % 8 == 7)
-            return 4;
+        if(memo[n] != null)
+            return memo[n];
         
-        for(int i = 1; i*i <= n; i++){
-            int base = (int)Math.sqrt(n-i*i);
-            if(base*base == (n-i*i))
-                return 2;
-        }
+        int min = n;
+        for(int i = 1; i*i <= n; i++)
+            min = Math.min(min, 1 + solve(n-i*i, memo));
         
-        return 3;
+        memo[n] = min;
+        return memo[n];
     }
 }
