@@ -10,20 +10,16 @@
 // TC : O(logn) SC : O(1)
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if(root.val == p.val || root.val == q.val)
-            return root;
         
-        if((root.val < p.val && root.val > q.val) || (root.val > p.val && root.val < q.val))
-            return root;
+        while(root != null){
+            if(root.val < p.val && root.val < q.val)
+                root = root.right;
+            else if(root.val > p.val && root.val > q.val)
+                root = root.left;
+            else 
+                return root;
+        }
         
-        TreeNode left = null;
-        TreeNode right = null;
-        
-        if(root.val > p.val && root.val > q.val)
-           left = lowestCommonAncestor(root.left, p, q);
-        else
-            right = lowestCommonAncestor(root.right, p, q);
-        
-        return left == null ? right : left;
+        return root;
     }
 }
