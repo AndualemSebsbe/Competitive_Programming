@@ -13,7 +13,7 @@ class numberOfProvinces {
     }
 }
 
-public class UnionFind{
+ class UnionFind{
     int[] parents;
     int[] size;
     int numOfProvinces = 0;

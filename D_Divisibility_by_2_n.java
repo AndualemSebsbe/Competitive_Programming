@@ -3,9 +3,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 import java.util.StringTokenizer;
+import java.math.BigInteger;
 
 
-public class boyAndGirl {
+public class D_Divisibility_by_2_n {
     static class RealScanner {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer("");
@@ -31,16 +32,7 @@ public class boyAndGirl {
     
    
     public static void main(String[] args) {
-        RealScanner sc = new RealScanner();
-        
-       String s = sc.next();
-       Set<Character> set = new HashSet<>();
-       for(int i = 0; i < s.length(); i++){
-           set.add(s.charAt(i));
-       }
-       if(set.size() % 2 == 0)
-       System.out.println("CHAT WITH HER!");
-       else
-       System.out.println("IGNORE HIM!");
-    }
+       RealScanner sc = new RealScanner();
+      
+     }
 }

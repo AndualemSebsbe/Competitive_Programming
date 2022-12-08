@@ -1,6 +1,5 @@
 class Solution {
     public String sortSentence(String s) {
-        int num=s.length();
         int count=1;
         String[] str=s.split(" ");
          for (int i = 0; i < s.length() - 1; i++)
@@ -12,7 +11,7 @@ class Solution {
         }
          String newS=new String();
          char j='1';
-        for(int i=0, k=0; i<count; i++){
+        for(int i=0; i<count; i++){
             int n=str[i].length();
             if((str[i].charAt(n-1))==(j)){
                  StringBuilder build =new StringBuilder(str[i]); 

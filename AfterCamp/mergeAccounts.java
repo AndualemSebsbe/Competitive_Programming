@@ -1,8 +1,16 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
+
 class Solution {
     public List<List<String>> accountsMerge(List<List<String>> accounts) {
         UnionFind uf = new UnionFind(accounts.size());
                 
-        Map<String, Integer> map = new HashMap<>();
+        final Map<String, Integer> map = new HashMap<>();
         for(int i = 0; i < accounts.size(); i++){
             for(int j = 1; j < accounts.get(i).size(); j++){
                 if(!map.containsKey(accounts.get(i).get(j))){
@@ -34,7 +42,7 @@ class Solution {
     }
 }
 
-public class UnionFind{
+ class UnionFind{
     int[] parents;
     // int[] size;
     

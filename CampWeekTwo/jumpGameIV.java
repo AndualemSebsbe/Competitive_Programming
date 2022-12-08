@@ -11,7 +11,7 @@ class jumpGameIV {
         int n = arr.length;
         HashMap<Integer, List<Integer>> valIndex = new HashMap<>();
         for(int i = 0; i < n; i++)
-         valIndex.computeIfAbsent(arr[i], l -> new ArrayList()).add(i);   
+         valIndex.computeIfAbsent(arr[i], l -> new ArrayList<>()).add(i);   
         
         Queue<Integer> queue = new LinkedList<>();
         Set<Integer> visited = new HashSet<>();

@@ -9,7 +9,7 @@ class Solution {
         
         int[] inDegree = new int[numCourses];
         int dst = 0, src = 0;
-        Queue<Integer> queue = new LinkedList();
+        Queue<Integer> queue = new LinkedList<>();
         HashMap<Integer, List<Integer>> graph = new HashMap<>();
         
         

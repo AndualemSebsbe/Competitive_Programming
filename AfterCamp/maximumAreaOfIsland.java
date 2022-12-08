@@ -20,7 +20,7 @@ class maximumAreaOfIsland {
     }
 }
 
-public class UnionFind{
+ class UnionFind{
     int[] parents;
     int[] size;
     int maxArea;

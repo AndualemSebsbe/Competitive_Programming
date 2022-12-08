@@ -12,12 +12,12 @@ class twoSum {
            nums[i] = sc.nextInt();
         System.out.println("Enter the target");
         int target = sc.nextInt();
-        int[] arr = twoSum(nums, target);
+        int[] arr = twosum(nums, target);
        System.out.println(Arrays.toString(arr));
     
     }
-    public static int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> map = new HashMap();
+    public static int[] twosum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
         
         int[] arr = new int[2];
         

@@ -10,9 +10,9 @@ class findSafeStates {
         int n = graph.length;
         // Integer[] num = new Integer[n];
         
-        Queue<Integer> queue = new LinkedList();
+        Queue<Integer> queue = new LinkedList<>();
         
-        HashMap<Integer, List<Integer>> map = new HashMap();
+        HashMap<Integer, List<Integer>> map = new HashMap<>();
         int[] outgoing = new int[n];
         
         int indx = 0, src = 0, dst = 0;
@@ -38,8 +38,6 @@ class findSafeStates {
                 queue.add(i);
         }
         
-        
-        int j = 0;
         List<Integer> list = new ArrayList<Integer>();
         while(queue.size() > 0){
             int curr = queue.remove();

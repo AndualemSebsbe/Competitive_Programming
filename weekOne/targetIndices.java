@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 class Solution {
     public List<Integer> targetIndices(int[] nums, int target) {
@@ -13,7 +14,7 @@ class Solution {
                 }                
             }
         }
-        int endIndex=0;
+
         for(int i=0; i< len; i++){
             if(nums[i]==target){
                 arr.add(i);

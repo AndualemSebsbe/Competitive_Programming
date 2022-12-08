@@ -1,5 +1,5 @@
 class longestComonPrefix {
-    public String longestComonPrefix(String[] strs) {
+    public String longestCommonPrefix(String[] strs) {
         int minlen = strs[0].length();
         
         for(int i = 1; i < strs.length; i++){

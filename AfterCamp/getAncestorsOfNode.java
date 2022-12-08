@@ -1,3 +1,13 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
+
 class getAncestorsOfNode {
     public List<List<Integer>> getAncestors(int n, int[][] edges) {
         Map<Integer, List<Integer>> toFrom = new HashMap<>();
@@ -7,8 +17,8 @@ class getAncestorsOfNode {
         int src = 0, dst = 0;
         for(int[] edge : edges){
             src = edge[0]; dst = edge[1];
-            toFrom.computeIfAbsent(dst, l -> new ArrayList()).add(src);
-            fromTo.computeIfAbsent(src, l -> new ArrayList()).add(dst);
+            toFrom.computeIfAbsent(dst, l -> new ArrayList<>()).add(src);
+            fromTo.computeIfAbsent(src, l -> new ArrayList<>()).add(dst);
             degree[dst]++;
         }
         
@@ -20,16 +30,16 @@ class getAncestorsOfNode {
                 queue.add(i);
             // bfs(graph,answer, i);
         }
-        Map<Integer, Set<Integer>> ancestors = new HashMap();
+        Map<Integer, Set<Integer>> ancestors = new HashMap<>();
         
         //now bfs starts
         while(queue.size() > 0){
             Integer curr = queue.poll();
-            Set<Integer> ans = new HashSet();
+            Set<Integer> ans = new HashSet<>();
             
             for(int ancestor : toFrom.getOrDefault(curr, new ArrayList<>())){
                 ans.add(ancestor);
-                ans.addAll(ancestors.getOrDefault(ancestor, new HashSet()));
+                ans.addAll(ancestors.getOrDefault(ancestor, new HashSet<>()));
             }
             
             ancestors.put(curr, ans);
@@ -46,7 +56,7 @@ class getAncestorsOfNode {
         
         for(int i = 0; i < n; i++){
             Set<Integer> ans = ancestors.get(i);
-            List<Integer> sorted = new ArrayList(ans);
+            List<Integer> sorted = new ArrayList<>(ans);
             Collections.sort(sorted);
             answer.add(sorted);
         }

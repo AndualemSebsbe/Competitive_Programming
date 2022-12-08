@@ -13,4 +13,3 @@ class kthSmallest1 {
         return maxHeap.peek();
     }
     }
-}

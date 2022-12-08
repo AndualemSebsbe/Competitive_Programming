@@ -1,13 +1,13 @@
 import java.util.HashSet;
 import java.util.Stack;
 
-class Solution {
+class reversePolish {
     public int evalRPN(String[] tokens) {
         Stack<String> st = new Stack<String>();
         int st1=0;
         Integer s2=0;
         int z=0;
-         HashSet<String> set=new HashSet();  
+         HashSet<String> set=new HashSet<>();  
            set.add("+");    
            set.add("-");    
            set.add("*");   

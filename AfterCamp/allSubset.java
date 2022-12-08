@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class allSubset {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> allSubsets = new ArrayList<List<Integer>>();

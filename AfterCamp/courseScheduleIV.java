@@ -1,9 +1,14 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 class courseScheduleIV {
     public List<Boolean> checkIfPrerequisite(int numCourses, int[][] prerequisites, int[][] queries) {
         
         boolean [][] grid = new  boolean [numCourses][numCourses];
         // System.out.println(grid[0][0]);
-        List<Integer>[] g = new List[numCourses]; // we can also use Map<Integer, List<integer>>
+        List<Integer>[] g = new ArrayList[numCourses]; // we can also use Map<Integer, List<integer>>
      
         for(int i = 0; i < numCourses; i++) {
             g[i] = new ArrayList<>();

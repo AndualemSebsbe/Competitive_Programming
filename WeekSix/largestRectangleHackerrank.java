@@ -1,13 +1,6 @@
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
 import java.util.stream.*;
-import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 class Result {
@@ -22,7 +15,7 @@ class Result {
     public static long largestRectangle(List<Integer> h) {
     // Write your code here
       int len = h.size();
-        int num = 0, maxValue = 0, pro = 0, val = 0;
+        int maxValue = 0;
         
         if(len==1) return h.get(0);
         Stack<Integer> st = new Stack<>();

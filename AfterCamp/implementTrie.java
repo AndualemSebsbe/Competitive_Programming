@@ -1,7 +1,7 @@
 class implementTrie {
     TrieNode root;
     
-    public Trie() {
+    public implementTrie() {
         root = new TrieNode('\0');
     }
     

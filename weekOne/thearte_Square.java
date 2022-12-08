@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Thearte_Square{
+public class Thearte_Square {
     public static void main(String[] args){
         long flag=0;
         Scanner scanner = new Scanner(System.in);

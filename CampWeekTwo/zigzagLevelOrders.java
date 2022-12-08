@@ -24,7 +24,7 @@ class zigzagLevelOrders {
         List<List<Integer>> aList = new ArrayList<List<Integer>>();
         if(root == null) return aList;
         
-        Queue<TreeNode> queue = new LinkedList();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         boolean reverselist = false;
         while(!queue.isEmpty()){

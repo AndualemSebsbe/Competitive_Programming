@@ -3,9 +3,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 import java.util.StringTokenizer;
+import java.math.BigInteger;
 
 
-public class boyAndGirl {
+public class A_Kefa_and_First_Steps {
     static class RealScanner {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer("");
@@ -31,16 +32,24 @@ public class boyAndGirl {
     
    
     public static void main(String[] args) {
-        RealScanner sc = new RealScanner();
-        
-       String s = sc.next();
-       Set<Character> set = new HashSet<>();
-       for(int i = 0; i < s.length(); i++){
-           set.add(s.charAt(i));
+       RealScanner sc = new RealScanner();
+       int n = sc.nextInt();
+       int l = 0;
+       int[] nums = new int[n];
+       for(int i = 0; i < n; i++){
+           nums[i] = sc.nextInt();
        }
-       if(set.size() % 2 == 0)
-       System.out.println("CHAT WITH HER!");
-       else
-       System.out.println("IGNORE HIM!");
-    }
+       
+       int max = 1;
+       for(int i = 1; i < n; i++){
+           while(i < n && nums[i] >= nums[i-1]){
+               i++;
+           }
+           
+           max = Math.max(max, i-l);
+           l = i;
+       }
+
+       System.out.println(max);
+     }
 }

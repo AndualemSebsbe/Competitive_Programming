@@ -5,8 +5,8 @@ import java.util.Map;
 
 class courseScheduleII {
     public int[] findOrder(int numCourses, int[][] prerequisites) {
-        List<Integer> vis = new ArrayList();
-        HashMap<Integer, List<Integer>> graph = new HashMap();
+        List<Integer> vis = new ArrayList<>();
+        HashMap<Integer, List<Integer>> graph = new HashMap<>();
      
         int src = 0, dst = 0;
         int[] inDegree = new int[numCourses];

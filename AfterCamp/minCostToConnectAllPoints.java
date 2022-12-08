@@ -1,3 +1,5 @@
+import java.util.PriorityQueue;
+
 class minCostConnectAllPoints {
     public int minCostConnectPoints(int[][] points) {
       PriorityQueue<int[]> pq = new PriorityQueue<>((x, y) -> Integer.compare(x[0], y[0]));

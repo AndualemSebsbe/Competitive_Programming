@@ -34,8 +34,7 @@ public class registrationSystem {
         RealScanner sc = new RealScanner();
         
        int t = sc.nextInt();
-       Map<String, Integer> map = new HashMap();
-       int i = 1;
+       Map<String, Integer> map = new HashMap<>();
        while(t-- > 0){
            String str = sc.next();
            if(map.containsKey(str)){

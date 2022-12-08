@@ -2,7 +2,6 @@ import java.util.Stack;
 
 class Solution {
     public boolean isValid(String s) {
-        int len=s.length();
         boolean balanced=false;
         Stack<Character> s1 = new Stack<Character>();
         char top;
@@ -18,7 +17,7 @@ class Solution {
                   }
                   else{
                       top=(Character) s1.peek();
-                      if(ch==')' && top=='(' || ch==']' && top=='['                          || ch=='}' && top=='{'){
+                      if(ch==')' && top=='(' || ch==']' && top=='[' || ch=='}' && top=='{'){
                           s1.pop();
                       }
                       else
