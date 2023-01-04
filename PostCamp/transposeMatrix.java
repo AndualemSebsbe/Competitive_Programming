@@ -1,4 +1,4 @@
-
+package PostCamp;
 class transposeMatrix {
     public int[][] transpose(int[][] matrix) {
         int m = matrix.length, n = matrix[0].length;
