@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-class Solution {
+class minimumPairSum {
     public int minPairSum(int[] nums) {
       int len = nums.length;
       Arrays.sort(nums);

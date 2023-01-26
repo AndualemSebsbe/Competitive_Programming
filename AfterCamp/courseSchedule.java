@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-class Solution {
+class courseSchedule {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         
         int[] inDegree = new int[numCourses];

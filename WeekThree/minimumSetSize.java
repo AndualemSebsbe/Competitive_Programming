@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.HashMap;
 
-class Solution {
+class minimumSetSize {
     public int minSetSize(int[] arr) {
        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         int maxFreq = 0;

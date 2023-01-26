@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
-class Solution {
+class mergeAccounts {
     public List<List<String>> accountsMerge(List<List<String>> accounts) {
         UnionFind uf = new UnionFind(accounts.size());
                 

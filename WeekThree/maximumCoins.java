@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-class Solution {
+class maximumCoins {
     public int maxCoins(int[] piles) {
         int len = piles.length;
         int n = len/3;
