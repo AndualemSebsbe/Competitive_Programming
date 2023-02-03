@@ -1,4 +1,6 @@
-class simplifyPath{
+import java.util.Stack;
+
+class simplifyThePath{
     public String simplifyPath(String path) {
          Stack<String> st = new Stack<>();
          StringBuilder res = new StringBuilder();
