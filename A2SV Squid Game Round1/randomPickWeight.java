@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.TreeMap;
 
 class randomPickWeight {
-    TreeMap<Integer, Integer> map = new TreeMap();
+    TreeMap<Integer, Integer> map = new TreeMap<>();
     Random rand = new Random();
     int count = 0;
     
