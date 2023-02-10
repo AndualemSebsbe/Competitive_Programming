@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class Solution {
+class maxSwap {
     public int maximumSwap(int num) {
 
         List<Integer> nums = new ArrayList<>();
