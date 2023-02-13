@@ -1,4 +1,4 @@
-class addBinary {
+class addBinaryString {
     public String addBinary(String a, String b) {
         int i = a.length()-1, j = b.length()-1;
         StringBuilder sb = new StringBuilder();
