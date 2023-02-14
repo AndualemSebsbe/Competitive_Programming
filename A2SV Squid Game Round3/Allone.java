@@ -4,13 +4,13 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Set;
 
-public class Allone {
+public class allOne {
 
     Map<String, Integer> map;
     Map<Integer, Set<String>> valueMap;
     LinkedList<Integer> minMax;
 
-    public AllOne() {
+    public allOne() {
         map = new HashMap<>();
         valueMap = new HashMap<>();
         minMax = new LinkedList<Integer>();
