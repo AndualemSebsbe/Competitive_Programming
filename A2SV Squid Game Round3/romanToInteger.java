@@ -1,7 +1,10 @@
+import java.util.HashMap;
+import java.util.Map;
+
 class romanToInteger {
     public int romanToInt(String s) {
         int n = s.length();
-        Map<Character, Integer> map = new HashMap();
+        Map<Character, Integer> map = new HashMap<>();
         map.put('I', 1);
         map.put('V', 5);
         map.put('X', 10);
