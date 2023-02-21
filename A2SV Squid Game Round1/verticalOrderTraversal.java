@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class Solution {
+class verticalOrderTraversal {
     int left = 0, right = 0;
     public List<List<Integer>> verticalTraversal(TreeNode root) {
         Map<Integer, List<int[]>> map = new HashMap<>();
