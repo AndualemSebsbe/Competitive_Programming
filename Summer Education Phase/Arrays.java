@@ -12,4 +12,8 @@ public class Arrays {
     public static void sort(String[] sArr, largestNumber.LargeNumComparator largeNumComparator) {
     }
 
+    public static Object asList(String[] split) {
+        return null;
+    }
+
 }
