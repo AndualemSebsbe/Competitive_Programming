@@ -3,7 +3,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class AllOne {
+public class allOoneDataStructure {
     // maintain a doubly linked list of Buckets
     private Bucket head;
     private Bucket tail;
