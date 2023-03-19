@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Solution {
+class shortestCellPathBFS {
   
 	static int shortestCellPath(int[][] grid, int sr, int sc, int tr, int tc) {
 		// your code goes here
