@@ -14,31 +14,12 @@
  * }
  */
 class Solution {
+    int max = 0, count = 0, curNum = 0;
+    List<Integer> ans = new ArrayList();
+
     public int[] findMode(TreeNode root) {
-        List<Integer> values = new ArrayList();
-        inorderTraversal(root, values);
-
-        int max = 0, count = 0, curNum = 0;
-        List<Integer> ans = new ArrayList();
-        for(int val : values){
-            if(curNum == val){
-                count += 1;
-            }
-            else{
-                count = 1;
-                curNum = val;
-            }
-
-            if(count > max){
-                ans = new ArrayList();
-                max = count;
-            }
-            
-            if(count == max){
-                ans.add(val);
-            }
-        }
-
+        inorderTraversal(root);
+        
         int[] res = new int[ans.size()];
         for(int i = 0; i < ans.size(); i++)
             res[i] = ans.get(i);
@@ -47,12 +28,28 @@ class Solution {
     }
 
     // inorder traversal visits the node in sorted order
-    void inorderTraversal(TreeNode node, List<Integer> values){
+    void inorderTraversal(TreeNode node){
         if(node == null)
             return;
 
-        inorderTraversal(node.left, values);
-        values.add(node.val);
-        inorderTraversal(node.right, values);
+        inorderTraversal(node.left);
+
+        if(curNum == node.val){
+            count += 1;
+        }
+        else{
+            count = 1;
+            curNum = node.val;
+        }
+
+        if(count > max){
+            ans = new ArrayList();
+            max = count;
+        }
+        
+        if(count == max)
+            ans.add(node.val);
+        
+        inorderTraversal(node.right);
     }
 }
