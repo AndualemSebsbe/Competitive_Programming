@@ -12,12 +12,13 @@ class Solution {
     public ListNode swapNodes(ListNode head, int k) {
         ListNode cur = head;
         
-        for(int i = 0; i < k-1; i++)
+        while(k-- > 1)
             cur = cur.next;
 
         ListNode left = cur;
-        ListNode right = head;
-        while(cur.next != null){
+        ListNode dummy = new ListNode(0, head);
+        ListNode right = dummy;
+        while(cur != null){
             cur = cur.next;
             right = right.next;
         }
