@@ -14,7 +14,7 @@ class FoodRatings {
     Map<String, Food> foodMap;
     
 
-    public FoodRatings(String[] foods, String[] cuisines, int[] ratings) {
+    public FoodRatings(String[] foods, String[] cuisines, int[] ratings){
         cuisineMap = new HashMap();
         foodMap = new HashMap();
         for(int i = 0; i < foods.length; i++){
@@ -22,17 +22,14 @@ class FoodRatings {
             foodMap.put(foods[i], f);
 
             if(!cuisineMap.containsKey(cuisines[i])){
-                PriorityQueue<Food> pq = 
-                new PriorityQueue<Food>(
+                cuisineMap.put(cuisines[i], new PriorityQueue<Food>(
                     (Food a, Food b) -> 
                     a.rating != b.rating ? b.rating - a.rating : 
                     a.name.compareTo(b.name)
-                );
-                pq.add(f);
-                cuisineMap.put(cuisines[i], pq);
+                ));
             }
-            else
-                cuisineMap.get(cuisines[i]).add(f);
+            
+            cuisineMap.get(cuisines[i]).add(f);
         }
     }
     
