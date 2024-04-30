@@ -1,18 +1,18 @@
 class Solution {
     public int minOperations(int[] nums, int k) {
-        int finalXor = 0;
-        for (int n : nums)
-            finalXor = finalXor ^ n;
-        
         int count = 0;
-        while (k > 0 || finalXor > 0) {
-            if ((k % 2) != (finalXor % 2))
-                count++;
-            
-            k /= 2;
-            finalXor /= 2;
+        for(int i = 0; i < 32; i++){
+            int xorVal = 0;
+            for(int num : nums){
+                xorVal ^= (num & (1 << i));
+            }
+
+            int kBitVal = (k & (1 << i));
+
+            if(xorVal != kBitVal)
+                count += 1;
         }
-        
+
         return count;
     }
 }
