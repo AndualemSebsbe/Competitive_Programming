@@ -1,24 +1,24 @@
 class Solution {
     public int minimumDeletions(String s) {
         int n = s.length();
-        int totalA = 0;
+        int countA = 0;
         for(int i = 0; i < n; i++){
             if(s.charAt(i) == 'a')
-                totalA += 1;
+                countA += 1;
         }
 
         int min = Integer.MAX_VALUE;
-        int countA = 0, countB = 0;
+        int leftA = 0, leftB = 0;
         for(int i = 0; i < n; i++){
             int cur = 0;
-            cur += countB; // add num of B's before the current index
+            cur += leftB; // add num of B's before the current index
             
             if(s.charAt(i) == 'a')
-                countA += 1;
+                leftA += 1;
             else
-                countB += 1;
-
-            cur += (totalA - countA); // add num of A's after the current index
+                leftB += 1;
+            int rightA = countA - leftA; // num of A's after the current index
+            cur += rightA; 
             min = Math.min(min, cur);
         }
 
