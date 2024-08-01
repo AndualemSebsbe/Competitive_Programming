@@ -1,29 +1,23 @@
 class Solution {
     public int minHeightShelves(int[][] books, int shelfWidth) {
         int n = books.length;
-        Integer[] memo = new Integer[n];
-        return minHeight(books, 0, shelfWidth, memo);
-    }
+        int[] dp = new int[n + 1];
+        for(int i = n - 1; i >= 0; i--){
+            int curWidth = shelfWidth, maxHeight = 0;
+            dp[i] = Integer.MAX_VALUE;
 
-    int minHeight(int[][] books, int i, int shelfWidth, Integer[] memo){
-        if(i == books.length)
-            return 0;
+            for(int j = i; j < books.length; j++){
+                int width = books[j][0], height = books[j][1];
+                if(curWidth < width)
+                    break;
+                
+                curWidth -= width;
+                maxHeight = Math.max(maxHeight, height);
 
-        if(memo[i] != null)
-            return memo[i];
-        
-        int curWidth = shelfWidth, maxHeight = 0;
-        int res = Integer.MAX_VALUE;
-        for(int j = i; j < books.length; j++){
-            if(curWidth < books[j][0])
-                break;
-            
-            curWidth -= books[j][0];
-            maxHeight = Math.max(maxHeight, books[j][1]);
-
-            res = Math.min(res, maxHeight + minHeight(books, j + 1, shelfWidth, memo));
+                dp[i] = Math.min(dp[i], maxHeight + dp[j + 1]);
+            }
         }
 
-        return memo[i] = res;
+        return dp[0];
     }
 }
