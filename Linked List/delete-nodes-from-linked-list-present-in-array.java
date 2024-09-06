@@ -18,13 +18,11 @@ class Solution {
         dummy.next = head;
         ListNode cur = dummy;
 
-        while (head != null) {
-            if (set.contains(head.val))
-                cur.next = head.next;
+        while (cur.next != null) {
+            if (set.contains(cur.next.val))
+                cur.next = cur.next.next;
             else
                 cur = cur.next;
-            
-            head = head.next;
         }
 
         return dummy.next;
