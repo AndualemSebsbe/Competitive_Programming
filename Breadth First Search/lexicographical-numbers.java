@@ -1,27 +1,21 @@
 class Solution {
-    Map<Integer, List<Integer>> graph = new HashMap();
     public List<Integer> lexicalOrder(int n) {
-        for (int i = 1; i <= n; i++) {
-            int par = i / 10;            
-            if (!graph.containsKey(par))
-                graph.put(par, new ArrayList());
-            graph.get(par).add(i);
-        }
-
         List<Integer> res = new ArrayList();
-        dfs(res, 0);
+        for (int start = 1; start <= 9; start++)
+            dfs(res, start, n);
 
         return res;
     }
 
-    void dfs(List<Integer> res, int num) {
-        if (num != 0)
-            res.add(num);
-            
-        if (graph.containsKey(num)) {
-            for (int child : graph.get(num)) {
-                dfs(res, child);
-            }
+    void dfs(List<Integer> res, int num, int n) {
+        if (num > n)
+            return;
+
+        res.add(num);
+
+        for (int nextDigit = 0; nextDigit <= 9; nextDigit++) {
+            int nextNum = num * 10 + nextDigit;
+            dfs(res, nextNum, n);
         }
     }
 }
