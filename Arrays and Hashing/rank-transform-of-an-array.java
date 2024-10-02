@@ -1,23 +1,23 @@
 class Solution {
     public int[] arrayRankTransform(int[] arr) {
-        Set<Integer> tSet = new TreeSet();
-        for (int num : arr)
-            tSet.add(num);
+        int n = arr.length;
+        Map<Integer, List<Integer>> tMap = new TreeMap();
+        for (int i = 0; i < n; i++) {
+            if (!tMap.containsKey(arr[i]))
+                tMap.put(arr[i], new ArrayList());
+            tMap.get(arr[i]).add(i);
+        }
         
-        Map<Integer, Integer> ranks = new HashMap();
         int rank = 1;
-        for (int key : tSet) {
-            ranks.put(key, rank);
+        for (int key : tMap.keySet()) {
+            List<Integer> indexes = tMap.get(key);
+            for (int idx : indexes) {
+                arr[idx] = rank;
+            }
+
             rank += 1;
         }
 
-        int n = arr.length;
-        int[] res = new int[n];
-        for (int i = 0; i < n; i++) {
-            rank = ranks.get(arr[i]);
-            res[i] = rank; 
-        }
-
-        return res;
+        return arr;
     }
 }
