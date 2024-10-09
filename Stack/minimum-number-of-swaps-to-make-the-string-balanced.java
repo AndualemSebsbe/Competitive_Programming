@@ -1,15 +1,18 @@
 class Solution {
     public int minSwaps(String s) {
         Stack<Character> st = new Stack();
+        int imbalanceCount = 0;
         for (char c : s.toCharArray()) {
-            if (!st.isEmpty() && st.peek() == '[' && c == ']')
-                st.pop();
-            else
+            if (c == '[')
                 st.add(c);
+            else {
+                if (!st.isEmpty())
+                    st.pop();
+                else
+                    imbalanceCount += 1;
+            }
         }
-
-        int imbalancePair = st.size() / 2;
-
-        return (imbalancePair + 1) / 2;
+        
+        return (imbalanceCount + 1) / 2;
     }
 }
