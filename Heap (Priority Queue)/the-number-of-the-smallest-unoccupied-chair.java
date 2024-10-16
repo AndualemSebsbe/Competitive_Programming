@@ -1,39 +1,34 @@
 class Solution {
 
     public int smallestChair(int[][] times, int targetFriend) {
-        List<int[]> events = new ArrayList<>(); // To store both arrival and leave events
+        List<Integer> indexes = new ArrayList();
 
-        // Populate events with {arrival, friendIndex} and {leave, -friendIndex}
-        for (int i = 0; i < times.length; i++) {
-            events.add(new int[] { times[i][0], i }); // Friend arrives
-            events.add(new int[] { times[i][1], ~i }); // Friend leaves
-        }
+        for (int i = 0; i < times.length; i++)
+            indexes.add(i);
 
-        Collections.sort(events, (a, b) -> a[0] - b[0]); // Sort events by time
+        Collections.sort(indexes, (a, b) -> times[a][0] - times[b][0]);
 
-        PriorityQueue<Integer> availableChairs = new PriorityQueue<>(); // Min-heap for available chairs
-        PriorityQueue<int[]> occupiedChairs = new PriorityQueue<>(
-                (a, b) -> a[0] - b[0]); // Min-heap to track when chairs will be vacated
+        PriorityQueue<Integer> availableChairs = new PriorityQueue<>();
+        PriorityQueue<int[]> occupiedChairs = new PriorityQueue<>((a, b) -> a[0] - b[0]);
 
-        for (int i = 0; i < times.length; i++) {
-            availableChairs.add(i); // Initially all chairs are free
-        }
+        for (int i = 0; i < times.length; i++)
+            availableChairs.add(i); 
 
-        for (int[] event : events) {
-            int time = event[0];
-            int friendIndex = event[1];
+        for (int idx : indexes) {
+            int arrival = times[idx][0];
+            int leave = times[idx][1];
 
-            while (!occupiedChairs.isEmpty() && occupiedChairs.peek()[0] <= time) {
-                availableChairs.add(occupiedChairs.poll()[1]);
+            while (!occupiedChairs.isEmpty() && occupiedChairs.peek()[0] <= arrival) {
+                int[] curr = occupiedChairs.poll();
+                int l = curr[1]; // leave
+                availableChairs.add(l);
             }
 
-            if (friendIndex >= 0) {
-                int chair = availableChairs.poll();
-                if (friendIndex == targetFriend)
-                    return chair;
+            int chair = availableChairs.poll();
+            occupiedChairs.add(new int[]{leave, chair});
 
-                occupiedChairs.add(new int[] { times[friendIndex][1], chair }); 
-            }
+            if (idx == targetFriend)
+                return chair;
         }
 
         return -1;
