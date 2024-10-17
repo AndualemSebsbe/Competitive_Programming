@@ -13,7 +13,7 @@ class Solution {
                 maxHeap.add(new int[] {count[idx], c});
         }
 
-        String res = "";
+        StringBuilder res = new StringBuilder();
         while (!maxHeap.isEmpty()) {
             int[] first = maxHeap.poll();
             int len = res.length();
@@ -22,14 +22,14 @@ class Solution {
                     return "";
                 
                 int[] second = maxHeap.poll();
-                res += (char) (second[1]);
+                res.append((char) (second[1]));
                 second[0] -= 1;
 
                 if (second[0] != 0)
                     maxHeap.add(second);
             }
             else {
-                res += (char) (first[1]);
+                res.append((char) (first[1]));
                 first[0] -= 1;
             }
 
@@ -37,6 +37,6 @@ class Solution {
                 maxHeap.add(first);
         }
 
-        return res;
+        return res.toString();
     }
 }
