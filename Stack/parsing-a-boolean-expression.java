@@ -3,7 +3,6 @@ class Solution {
         Stack<Character> op = new Stack();
         Stack<Character> st = new Stack();
         for (char c : expression.toCharArray()) {
-
             if (c == '&' || c == '|' || c == '!')
                 op.add(c);
             else if (c == ')') {
@@ -19,14 +18,10 @@ class Solution {
 
                 if (st.peek() == '(')
                     st.pop();
+
                 if (op.peek() == '!')
                     res = !res;
-                
-                if (res)
-                    st.add('t');
-                else
-                    st.add('f');
-
+                st.add(res ? 't' : 'f');
                 op.pop();
             }
             else
