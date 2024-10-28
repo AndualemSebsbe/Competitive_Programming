@@ -1,32 +1,30 @@
 class Solution {
+    public int countSquares(int[][] matrix) {
+        int m = matrix.length, n = matrix[0].length;
+        int[][] dp = new int[m][n];
 
-    public int solve(int i, int j, int[][] grid, Integer[][] dp) {
-        if (i >= grid.length || j >= grid[0].length)
-            return 0;
-        
-        if (grid[i][j] == 0)
-            return 0;
-
-        if (dp[i][j] != null)
-            return dp[i][j];
-
-        int right = solve(i, j + 1, grid, dp);
-        int diagonal = solve(i + 1, j + 1, grid, dp);
-        int below = solve(i + 1, j, grid, dp);
-
-        return dp[i][j] = 1 + Math.min(right, Math.min(diagonal, below));
-    }
-
-    public int countSquares(int[][] grid) {
-        int ans = 0;
-        int m = grid.length, n = grid[0].length;
-        Integer[][] dp = new Integer[m][n];
-
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++)
-                ans += solve(i, j, grid, dp);
+        int res = 0;
+        for (int col = 0; col < n; col++) {
+            dp[0][col] = matrix[0][col];
+            res += dp[0][col];
         }
 
-        return ans;
+        for (int row = 1; row < m; row++) {
+            dp[row][0] = matrix[row][0];
+            res += dp[row][0];
+        }
+
+        for (int row = 1; row < m; row++) {
+            for (int col = 1; col < n; col++) {
+                if (matrix[row][col] == 1) {
+                    int min = Math.min(dp[row - 1][col - 1],
+                            Math.min(dp[row - 1][col], dp[row][col - 1]));
+                    dp[row][col] = 1 + min;
+                    res += dp[row][col];
+                }
+            }
+        }
+
+        return res;
     }
 }
