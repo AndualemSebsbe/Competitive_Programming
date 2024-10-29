@@ -1,24 +1,23 @@
 class Solution {
-
     public int longestSquareStreak(int[] nums) {
-        Map<Integer, Integer> streakLengths = new HashMap<>();
-        Arrays.sort(nums);
+        Map<Integer, Integer> map = new HashMap();
+        Arrays.sort(nums); 
+        
+        for (int num : nums) {
+            int sqrt = (int) Math.sqrt(num);
 
-        for (int number : nums) {
-            int root = (int) Math.sqrt(number);
-
-            if (root * root == number && streakLengths.containsKey(root)) {
-                streakLengths.put(number, streakLengths.get(root) + 1);
-            } else {
-                streakLengths.put(number, 1);
-            }
+            if (sqrt * sqrt == num && map.containsKey(sqrt))
+                map.put(num, 1 + map.get(sqrt));
+            else
+                map.put(num, 1);
         }
 
-        int longestStreak = 0;
-        for (int streakLength : streakLengths.values()) {
-            longestStreak = Math.max(longestStreak, streakLength);
+        int res = 0;
+        for (int key : map.keySet()) {
+            int streak = map.get(key);
+            res = Math.max(res, streak);
         }
 
-        return longestStreak == 1 ? -1 : longestStreak;
+        return res > 1 ? res : -1;
     }
 }
