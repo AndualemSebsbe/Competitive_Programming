@@ -1,41 +1,34 @@
 class Solution {
-
-    private final int[] dirs = { -1, 0, 1 };
-
     public int maxMoves(int[][] grid) {
-        int M = grid.length, N = grid[0].length;
+        int m = grid.length, n = grid[0].length;
+        int maxMoves = 0;
 
-        Queue<int[]> q = new LinkedList<>();
-        boolean[][] vis = new boolean[M][N];
-
-        for (int i = 0; i < M; i++) {
-            vis[i][0] = true;
-            q.offer(new int[] { i, 0, 0 });
+        Queue<int[]> queue = new LinkedList();
+        boolean[][] visited = new boolean[m][n];
+        for (int row = 0; row < m; row++) {
+            queue.add(new int[] {row, 0, 0}); // (row, col, moves);
+            visited[row][0] = true;
         }
 
-        int maxMoves = 0;
-        while (!q.isEmpty()) {
-            int sz = q.size();
+        int[][] dirs = {{-1, 1}, {0, 1}, {1, 1}};
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            
+            while (size-- > 0) {
+                int[] cur = queue.poll();
+                int row = cur[0], col = cur[1], moves = cur[2];
+                maxMoves = Math.max(maxMoves, moves);
 
-            while (sz-- > 0) {
-                int[] v = q.poll();
+                for (int[] dir : dirs) {
+                    int newR = row + dir[0];
+                    int newC = col + dir[1];
 
-                int row = v[0], col = v[1], count = v[2];
+                    if (newR < 0 || newR >= m || newC < 0 || newC >= n 
+                        || visited[newR][newC] || grid[row][col] >= grid[newR][newC])
+                        continue;
 
-                maxMoves = Math.max(maxMoves, count);
-
-                for (int dir : dirs) {
-                    int newRow = row + dir, newCol = col + 1;
-
-                    if (newRow >= 0 &&
-                            newCol >= 0 &&
-                            newRow < M &&
-                            newCol < N &&
-                            !vis[newRow][newCol] &&
-                            grid[row][col] < grid[newRow][newCol]) {
-                        vis[newRow][newCol] = true;
-                        q.offer(new int[] { newRow, newCol, count + 1 });
-                    }
+                    queue.add(new int[] {newR, newC, moves + 1});
+                    visited[newR][newC] = true;
                 }
             }
         }
