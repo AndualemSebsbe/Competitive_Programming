@@ -7,7 +7,6 @@ class Solution {
         for (int i = 1; i < n; i++) {
             int len = words[i].length();
             char firstChar = words[i].charAt(0);
-            System.out.println(firstChar + " " + lastChar);
             if (firstChar != lastChar)
                 return false;
             
