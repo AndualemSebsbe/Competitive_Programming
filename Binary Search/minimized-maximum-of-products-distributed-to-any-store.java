@@ -1,43 +1,32 @@
 class Solution {
-
-    public boolean canDistribute(int x, int[] quantities, int n) {
-        int j = 0;
-        int remaining = quantities[j];
-
-        for (int i = 0; i < n; i++) {
-            if (remaining <= x) {
-                j++;
-
-                if (j == quantities.length) {
-                    return true;
-                } else {
-                    remaining = quantities[j];
-                }
-            } else {
-                remaining -= x;
-            }
+    public int minimizedMaximum(int n, int[] quantities) {
+        int l = 1, r = quantities[0];
+        for (int quantity : quantities) {
+            if (quantity > r)
+                r = quantity;
         }
-        return false;
+        
+        int best = -1;
+
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+
+            if (canDistribute(n, quantities, mid)) {
+                best = mid;
+                r = mid - 1;
+            }
+            else
+                l = mid + 1;
+        }
+
+        return best;
     }
 
-    public int minimizedMaximum(int n, int[] quantities) {
-        int left = 0;
-        int right = 0;
+    boolean canDistribute(int n, int[] quantities, int numPros) {
+        int stores = 0;
+        for (int quantity : quantities) 
+            stores += Math.ceil(quantity / (double) numPros);
 
-        for (int quantity : quantities) {
-            if (quantity > right) {
-                right = quantity;
-            }
-        }
-
-        while (left < right) {
-            int middle = (left + right) / 2;
-            if (canDistribute(middle, quantities, n)) {
-                right = middle;
-            } else {
-                left = middle + 1;
-            }
-        }
-        return left;
+        return stores <= n;
     }
 }
