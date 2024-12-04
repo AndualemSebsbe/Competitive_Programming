@@ -9,13 +9,16 @@ class Solution {
             if (str1.charAt(i) == str2.charAt(j))
                 j += 1;
             else {
-                char c = (char) (str1.charAt(i) + 1);
-                if (c == '{')
+                char c = '\0';
+                if (str1.charAt(i) == 'z')
                     c = 'a';
+                else
+                    c = (char) (str1.charAt(i) + 1);
+
                 if (c == str2.charAt(j))
                     j += 1;
             }
-            
+
             i += 1;
         }
             
