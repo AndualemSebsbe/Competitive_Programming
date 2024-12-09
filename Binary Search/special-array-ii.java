@@ -1,0 +1,45 @@
+class Solution {
+
+    public boolean[] isArraySpecial(int[] nums, int[][] queries) {
+        boolean[] ans = new boolean[queries.length];
+        ArrayList<Integer> violatingIndices = new ArrayList<>();
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] % 2 == nums[i - 1] % 2)
+                violatingIndices.add(i);
+        }
+
+        for (int i = 0; i < queries.length; i++) {
+            int[] query = queries[i];
+            int start = query[0];
+            int end = query[1];
+
+            boolean foundViolatingIdx = binarySearch(start + 1, end, violatingIndices);
+
+            if (foundViolatingIdx)
+                ans[i] = false;
+            else
+                ans[i] = true;
+        }
+
+        return ans;
+    }
+
+    boolean binarySearch(int start, int end, ArrayList<Integer> violatingIndices) {
+        int left = 0;
+        int right = violatingIndices.size() - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            int violatingIndex = violatingIndices.get(mid);
+
+            if (violatingIndex < start)
+                left = mid + 1;
+            else if (violatingIndex > end)
+                right = mid - 1;
+            else
+                return true;
+        }
+
+        return false;
+    }
+}
