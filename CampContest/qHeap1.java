@@ -1,3 +1,5 @@
+package CampContest;
+
 import java.util.*;
 
 public class qHeap1 {
@@ -19,5 +21,7 @@ public class qHeap1 {
                 System.out.println(heap.peek());
             }
         }
+
+        scn.close();
     }
 }

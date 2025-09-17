@@ -4,8 +4,7 @@
     	Node left;
     	Node right;
 	*/
-    import java.util.*;
-import java.io.*;
+import java.util.*;
 
 class Node {
     Node left;

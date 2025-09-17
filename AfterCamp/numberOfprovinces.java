@@ -1,3 +1,4 @@
+package AfterCamp;
 class numberOfProvinces {
     
     public int findCircleNum(int[][] isConnected) {

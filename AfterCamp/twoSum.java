@@ -1,3 +1,5 @@
+package AfterCamp;
+
 import java.util.Scanner;
 import java.util.*;
 class twoSum {
@@ -14,6 +16,7 @@ class twoSum {
         int target = sc.nextInt();
         int[] arr = twosum(nums, target);
        System.out.println(Arrays.toString(arr));
+       sc.close();
     
     }
     public static int[] twosum(int[] nums, int target) {

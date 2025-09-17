@@ -5,8 +5,6 @@ public class mergeIntervals {
     
         public int[][] merge(int[][] intervals) {
             int len = intervals.length;
-           int k=len;
-           int j=0;
             double[][] doubleIntervals = new double[len][2];
               for(int i = 0; i < intervals.length; i++)
               {
@@ -14,9 +12,6 @@ public class mergeIntervals {
                 doubleIntervals[i][1] = (double) intervals[i][1];
               }
            // System.out.println(doubleIntervals);
-         
-            // int[][] res = new int[len][2];
-            int[][] temp = new int[len][2];
             // Sort the double 2d array
             Arrays.sort(doubleIntervals, Comparator.comparingDouble(o -> o[0]));
             int[][] intIntervals = new int[len][2];

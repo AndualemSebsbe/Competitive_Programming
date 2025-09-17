@@ -1,6 +1,6 @@
 import java.io.*;
 
-class Result {
+class countingValleysResult {
 
     /*
      * Complete the 'countingValleys' function below.
@@ -48,7 +48,7 @@ class Result {
 
         String path = bufferedReader.readLine();
 
-        int result = Result.countingValleys(steps, path);
+        int result = countingValleysResult.countingValleys(steps, path);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();

@@ -1,3 +1,5 @@
+package AfterCamp;
+
 import java.util.List;
 
 class triangle {

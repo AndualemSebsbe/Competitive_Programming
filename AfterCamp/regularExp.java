@@ -1,3 +1,5 @@
+package AfterCamp;
+
 class regularExp {
     public boolean isMatch(String s, String p) {
         int m = s.length(), n = p.length();

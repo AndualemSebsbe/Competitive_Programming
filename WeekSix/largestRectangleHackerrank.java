@@ -3,7 +3,7 @@ import java.util.*;
 import java.util.stream.*;
 import static java.util.stream.Collectors.toList;
 
-class Result {
+class largestRectangleResult {
 
     /*
      * Complete the 'largestRectangle' function below.
@@ -64,13 +64,11 @@ public class largestRectangleHackerrank {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        int n = Integer.parseInt(bufferedReader.readLine().trim());
-
         List<Integer> h = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
             .map(Integer::parseInt)
             .collect(toList());
 
-        long result = Result.largestRectangle(h);
+        long result = largestRectangleResult.largestRectangle(h);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();

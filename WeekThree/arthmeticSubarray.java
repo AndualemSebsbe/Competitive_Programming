@@ -7,7 +7,6 @@ public class arthmeticSubarray {
     
         public List<Boolean> checkArithmeticSubarrays(int[] nums, int[] l, int[] r) {
             int m=l.length;
-            int n=nums.length;
             // fill all list of boolean to true on instantiation
             List<Boolean> list = new ArrayList<Boolean>(Arrays.asList(new Boolean[l.length]));        
            // Collections.fill(list,true);

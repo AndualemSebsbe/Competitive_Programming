@@ -1,3 +1,5 @@
+package CampContest;
+
 class checkIfArrIsSorted {
     public boolean check(int[] nums) {
         if (nums == null || nums.length <= 1) {

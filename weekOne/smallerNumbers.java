@@ -1,4 +1,4 @@
-class Solution {
+class smallerNumbers {
     public int[] smallerNumbersThanCurrent(int[] nums) {
         int count=0;
         int len=nums.length;

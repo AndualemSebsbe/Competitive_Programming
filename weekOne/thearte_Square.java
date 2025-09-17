@@ -1,10 +1,11 @@
 import java.util.*;
 
-public class Thearte_Square {
+public class thearte_Square {
     public static void main(String[] args){
         long flag=0;
         Scanner scanner = new Scanner(System.in);
         String temp = scanner.nextLine();
+        scanner.close();
         String[] x=temp.split(" ");
        
          long num1=Integer.parseInt(x[0]);

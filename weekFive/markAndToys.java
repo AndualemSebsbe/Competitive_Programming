@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.stream.*;
 import static java.util.stream.Collectors.toList;
 
-class Result {
+class markAndToysResult {
 
     /*
      * Complete the 'maximumToys' function below.
@@ -44,15 +44,13 @@ public class markAndToys {
 
         String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
 
-        int n = Integer.parseInt(firstMultipleInput[0]);
-
         int k = Integer.parseInt(firstMultipleInput[1]);
 
         List<Integer> prices = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
             .map(Integer::parseInt)
             .collect(toList());
 
-        int result = Result.maximumToys(prices, k);
+        int result = markAndToysResult.maximumToys(prices, k);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();

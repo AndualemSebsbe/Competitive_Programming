@@ -3,7 +3,6 @@ import java.util.Stack;
 public class calculatorII {
     
         public int calculate(String s) {
-            int len = s.length();
             s = s.replaceAll("\\s+", "");
             String[] str = s.split("(?<=[-+*/])|(?=[-+*/])");
           //  System.out.println(Arrays.toString(str));

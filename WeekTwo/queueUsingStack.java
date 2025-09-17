@@ -14,8 +14,8 @@ class MyQueue {
     }
     
     public int pop() {
-         int i=st.size()-1;
-        int j=0;
+        int i = st.size()-1;
+        int j = 0;
         int k=0;
         if(st1.empty()){
         while(i >=0){

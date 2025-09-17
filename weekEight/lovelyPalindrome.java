@@ -7,5 +7,6 @@ public class lovelyPalindrome {
         Scanner sc = new Scanner(System.in);
         StringBuilder number = new StringBuilder(sc.next()); //because it's mutable and strings are immutable
         System.out.println(number.toString()+""+number.reverse());
+        sc.close();
     }
 }

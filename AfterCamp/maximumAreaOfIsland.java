@@ -1,3 +1,4 @@
+package AfterCamp;
 class maximumAreaOfIsland {
     public int maxAreaOfIsland(int[][] grid) {
         int row = grid.length;

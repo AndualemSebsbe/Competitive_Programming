@@ -10,7 +10,7 @@ class Employee {
 };
 */
 
-class Solution {
+public class empImportance {
     int imp = 0;
     public int getImportance(List<Employee> employees, int id) {
          HashMap<Integer, Employee> emap = new HashMap<Integer, Employee>();

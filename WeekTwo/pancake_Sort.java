@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class pancakeSort {
+public class pancake_Sort {
     
         public List<Integer> pancakeSort(int[] arr) {
             int len=arr.length;
@@ -13,7 +13,7 @@ public class pancakeSort {
             int sLen = len;
         for(int i=0; i<len; i++){
             if(!Sorted(arr)){
-            int maxIdx=0; int index=0;
+            int maxIdx=0;
             
             for(int j=0; j<sLen; j++){
                 if(arr[maxIdx]<arr[j]){                
@@ -24,8 +24,7 @@ public class pancakeSort {
             k = maxIdx+1;
             aList1.add(k);
             int[] revArr =  revSubArray(arr, k);
-            int[] reversedArr = new int[len];        
-            
+            int[] reversedArr = new int[len];                  
             reversedArr = revArray(revArr,sLen );
             aList1.add(sLen);
                 sLen--; //decrement the index to get index of the next greater element 

@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class fizzBuzz {
+class fizz_Buzz {
     public List<String> fizzBuzz(int n) {
-        List<String> arr= new ArrayList();
+        List<String> arr= new ArrayList<>();
         for(int i=1; i<=n; i++)
         {
             if(i%5==0 && i%3==0)

@@ -21,6 +21,9 @@ public class emotes
         indexMax = i;
       }
     }
+    sc.nextInt();
+    sc.close();
+
     // find the second max
     long secondMax = Integer.MIN_VALUE;
     for (int i = 0; i < size; i++)

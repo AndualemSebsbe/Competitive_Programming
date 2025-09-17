@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.stream.*;
 import static java.util.stream.Collectors.toList;
 
-class Result {
+class billDivisionResult {
 
     /*
      * Complete the 'bonAppetit' function below.
@@ -41,8 +41,6 @@ public class billDivision {
 
         String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
 
-        int n = Integer.parseInt(firstMultipleInput[0]);
-
         int k = Integer.parseInt(firstMultipleInput[1]);
 
         List<Integer> bill = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
@@ -51,7 +49,7 @@ public class billDivision {
 
         int b = Integer.parseInt(bufferedReader.readLine().trim());
 
-        Result.bonAppetit(bill, k, b);
+        billDivisionResult.bonAppetit(bill, k, b);
 
         bufferedReader.close();
     }

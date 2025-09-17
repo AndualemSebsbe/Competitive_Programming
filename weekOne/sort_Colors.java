@@ -1,4 +1,4 @@
-class Solution {
+class sort_Colors {
     public void sortColors(int[] nums) {
         int len=nums.length;
         // create buckets

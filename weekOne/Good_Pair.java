@@ -1,4 +1,4 @@
-class Solution {
+public class Good_Pair {
     public int numIdenticalPairs(int[] nums) {
         
         int count=0;

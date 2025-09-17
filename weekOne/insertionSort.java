@@ -2,10 +2,9 @@ import java.io.*;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
-class Result {
+class inserionSortResult {
 
     /*
      * Complete the 'insertionSort1' function below.
@@ -47,7 +46,7 @@ class Result {
 
 
 
- class Solution {
+ public class insertionSort {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -57,7 +56,7 @@ class Result {
             .map(Integer::parseInt)
             .collect(toList());
 
-        Result.insertionSort1(n, arr);
+        inserionSortResult.insertionSort1(n, arr);
 
         bufferedReader.close();
     }

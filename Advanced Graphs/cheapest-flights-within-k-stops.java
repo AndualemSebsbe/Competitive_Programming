@@ -1,14 +1,20 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 class Solution {
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
-        List<List<int[]>> graph = new ArrayList();
+        List<List<int[]>> graph = new ArrayList<>();
         for(int i = 0; i < n; i++)
-            graph.add(new ArrayList());
+            graph.add(new ArrayList<>());
         
         for(int[] flight : flights){
             graph.get(flight[0]).add(new int[]{flight[1], flight[2]});
         }
 
-        Queue<int[]> q = new LinkedList();
+        Queue<int[]> q = new LinkedList<>();
         q.add(new int[]{src, 0});
 
         int[] minCost = new int[n];

@@ -1,3 +1,5 @@
+package CampContest;
+
 import java.util.Arrays;
 
 class squareOfSorted {

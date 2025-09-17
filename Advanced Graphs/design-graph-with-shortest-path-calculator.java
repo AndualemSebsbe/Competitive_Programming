@@ -1,12 +1,19 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
+
 class Graph {
-    Map<Integer, List<int[]>> graph = new HashMap();
+    Map<Integer, List<int[]>> graph = new HashMap<>();
     int n;
     public Graph(int n, int[][] edges) {
         this.n = n;
         for(int[] edge : edges){
             int src = edge[0], dst = edge[1], cost = edge[2];
             if(!graph.containsKey(src))
-                graph.put(src, new ArrayList());
+                graph.put(src, new ArrayList<>());
             graph.get(src).add(new int[]{dst, cost});
         }
     }
@@ -14,7 +21,7 @@ class Graph {
     public void addEdge(int[] edge) {
         int src = edge[0], dst = edge[1], cost = edge[2];
         if(!graph.containsKey(src))
-            graph.put(src, new ArrayList());
+            graph.put(src, new ArrayList<>());
         graph.get(src).add(new int[]{dst, cost});
     }
     

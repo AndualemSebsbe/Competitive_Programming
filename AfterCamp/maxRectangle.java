@@ -1,3 +1,4 @@
+package AfterCamp;
 import java.util.Stack;
 
 class maxRectangle {

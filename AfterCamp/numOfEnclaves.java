@@ -1,3 +1,4 @@
+package AfterCamp;
 class numOfEnclaves {
     public int numEnclaves(int[][] grid) {
 

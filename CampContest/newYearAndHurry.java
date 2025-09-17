@@ -1,3 +1,5 @@
+package CampContest;
+
 import java.util.*;
 
 public class newYearAndHurry{
@@ -16,5 +18,6 @@ public class newYearAndHurry{
             i++; count++;
         }
         System.out.println(count);
+        input.close();
     }
 }

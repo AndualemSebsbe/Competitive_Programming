@@ -1,6 +1,5 @@
 class houseRobber {
     public int rob(int[] nums) {
-        int len = nums.length;
         int rob1 = 0;
         int rob2 = 0;
         for(int i :nums){

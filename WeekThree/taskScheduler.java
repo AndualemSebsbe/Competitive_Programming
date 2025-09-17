@@ -6,9 +6,7 @@ public class taskScheduler {
         public int leastInterval(char[] tasks, int n) {
             int len = tasks.length;
             int maxFreq = 0;
-            char maxKey= '\0';
-            char idle = '\0';
-            if(n==0)
+            if(n == 0)
                 return len;
            HashMap<Character, Integer> map = new HashMap<Character, Integer>();
             for(char ch: tasks){

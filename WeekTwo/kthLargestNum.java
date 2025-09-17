@@ -1,6 +1,6 @@
 
 import java.util.Arrays;
-class Solution {
+public class kthLargestNum {
     public String kthLargestNumber(String[] nums, int k) {
        
         int len = nums.length;

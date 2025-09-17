@@ -1,6 +1,6 @@
 import java.io.*;
 
-class Result {
+class recursiveDigitSumResult {
 
     /*
      * Complete the 'superDigit' function below.
@@ -33,7 +33,7 @@ public class recursiveDigitSum {
 
         int k = Integer.parseInt(firstMultipleInput[1]);
 
-        int result = Result.superDigit(n, k);
+        int result = recursiveDigitSumResult.superDigit(n, k);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();

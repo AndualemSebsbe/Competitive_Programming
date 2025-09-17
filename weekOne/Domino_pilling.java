@@ -5,6 +5,7 @@ public class Domino_pilling{
      
         Scanner scanner = new Scanner(System.in);
         String temp = scanner.nextLine();
+        scanner.close();
         String[] x=temp.split(" ");
         
          int num1=Integer.parseInt(x[0]);

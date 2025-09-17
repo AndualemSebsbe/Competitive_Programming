@@ -1,7 +1,7 @@
 class findPivotIndex {
     public int pivotIndex(int[] nums) {
         int len = nums.length;
-        int leftSum = 0, rightSum = 0, totalSum = nums[0];
+        int leftSum = 0, totalSum = nums[0];
         for(int i = 1; i<len; i++){
             totalSum += nums[i];          
         }

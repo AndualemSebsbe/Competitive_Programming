@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class Solution {
+public class target_Indices {
     public List<Integer> targetIndices(int[] nums, int target) {
         int len=nums.length;
         ArrayList<Integer> arr = new ArrayList<Integer>();

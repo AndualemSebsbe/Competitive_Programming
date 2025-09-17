@@ -1,8 +1,5 @@
 // import javax.swing.tree.TreeNode;
 
-
- 
- 
 class binaryTreeTilt {
     int sumOfDiff = 0;
     public int findTilt(TreeNode root) {
@@ -19,5 +16,19 @@ class binaryTreeTilt {
           int right = helper(root.right);
           sumOfDiff += Math.abs(left - right);
         return left + right + root.val;
+    }
+}
+
+// Definition for a binary tree node.
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode() {}
+    TreeNode(int val) { this.val = val; }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
     }
 }

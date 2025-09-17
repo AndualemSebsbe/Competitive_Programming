@@ -1,6 +1,5 @@
 class findSmallestDivisor {
     public int smallestDivisor(int[] nums, int threshold) {
-        int len = nums.length;
         int l = 1, r = 1000000;
         
             while(l <= r){

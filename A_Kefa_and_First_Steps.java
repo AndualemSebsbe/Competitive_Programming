@@ -1,10 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
 import java.util.StringTokenizer;
-import java.math.BigInteger;
-
 
 public class A_Kefa_and_First_Steps {
     static class RealScanner {

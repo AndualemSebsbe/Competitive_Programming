@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.stream.*;
 
-class Result {
+class sharelockAndSquaresResult {
 
     /*
      * Complete the 'squares' function below.
@@ -46,7 +46,7 @@ public class sharelockAndSquares {
 
                 int b = Integer.parseInt(firstMultipleInput[1]);
 
-                int result = Result.squares(a, b);
+                int result = sharelockAndSquaresResult.squares(a, b);
 
                 bufferedWriter.write(String.valueOf(result));
                 bufferedWriter.newLine();

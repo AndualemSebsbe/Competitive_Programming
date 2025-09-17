@@ -1,4 +1,4 @@
-class Solution {
+public class fibonacci {
     public int fib(int n) {
         int[] f = new int[n + 1];
         if(n == 0) return 0;

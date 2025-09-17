@@ -1,7 +1,8 @@
+package AfterCamp;
 import java.util.ArrayList;
 import java.util.List;
 
-class allSubset {
+public class allSubset {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> allSubsets = new ArrayList<List<Integer>>();
         
@@ -14,5 +15,12 @@ class allSubset {
             allSubsets.add(currSet);
         }
        return allSubsets; 
+    }
+
+    // main method
+    public static void main(String[] args) {
+        allSubset as = new allSubset();
+        int[] nums = {1, 2, 3};
+        System.out.println(as.subsets(nums));
     }
 }

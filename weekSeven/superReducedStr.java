@@ -1,6 +1,6 @@
 import java.io.*;
 
-class Result {
+class superReducedStrResult {
 
     /*
      * Complete the 'superReducedString' function below.
@@ -40,7 +40,7 @@ public class superReducedStr {
 
         String s = bufferedReader.readLine();
 
-        String result = Result.superReducedString(s);
+        String result = superReducedStrResult.superReducedString(s);
 
         bufferedWriter.write(result);
         bufferedWriter.newLine();

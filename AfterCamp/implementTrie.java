@@ -1,3 +1,4 @@
+package AfterCamp;
 class implementTrie {
     TrieNode root;
     

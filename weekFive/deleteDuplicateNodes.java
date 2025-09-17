@@ -70,8 +70,6 @@ class Result {
     // Write your code here
      SinglyLinkedListNode dummy = new SinglyLinkedListNode(0);
      SinglyLinkedListNode head = dummy;
-     SinglyLinkedListNode start = llist;
-     SinglyLinkedListNode llist1 = llist;
     
      while(llist.next != null ){
          System.out.println(llist.next.data);

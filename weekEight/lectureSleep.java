@@ -1,18 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.LinkedHashSet;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.LinkedList;
-import java.util.Set;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.StringTokenizer;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
 
 public class lectureSleep {
     static class FastReader {

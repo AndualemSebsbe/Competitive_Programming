@@ -1,3 +1,4 @@
+package AfterCamp;
 class minimumPathSum {
     public int minPathSum(int[][] grid){
         int m = grid.length;

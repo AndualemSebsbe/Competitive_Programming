@@ -1,3 +1,4 @@
+package AfterCamp;
 import java.util.PriorityQueue;
 
 class minCostConnectAllPoints {

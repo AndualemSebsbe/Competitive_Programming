@@ -4,8 +4,7 @@ public class chrismass_spurce {
 	
 	static ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>();
 	
-    public static void main(String[] args) 
-	{
+    public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
         int n = scan.nextInt();
@@ -22,6 +21,7 @@ public class chrismass_spurce {
 			addEdge(adj,node-1,i);
 		}
 		
+		scan.close();
 		
 		DFS(0,0,dp);
 		boolean spruce = true;
